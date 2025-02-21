@@ -65,7 +65,7 @@ def Main():
 
             with subcol1:
                 st.header("Original Image")
-                st.image(image, caption="Original Image", width=300)
+                st.image(image, width=300)
 
             # Store user settings in session state
             if "zoom" not in st.session_state:
@@ -80,14 +80,14 @@ def Main():
                 st.session_state.pan_y = 0.0
 
             # Apply transformations
-            image = cv2.resize(image, (544, 544), interpolation=cv2.INTER_AREA)
+            # image = cv2.resize(image, (544, 544), interpolation=cv2.INTER_AREA)
             img_res = Model.predict(image, image_name)
             img_transformed = adjust_brightness_contrast(img_res, st.session_state.brightness, st.session_state.contrast)
             img_transformed = zoom_image(img_transformed, st.session_state.zoom, st.session_state.pan_x, st.session_state.pan_y)
 
             with subcol2:
-                st.header("Image Preview")
-                st.image(img_transformed, use_column_width=True)
+                st.header("possible fractures")
+                st.image(img_transformed, use_container_width =True)
 
         with col3:
             st.header("Edit Image")

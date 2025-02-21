@@ -1,4 +1,47 @@
 {
+    "IMG0003342.jpg": [],
+    "IMG0003398.jpg": [
+        {
+            "coords": [
+                268,
+                229,
+                289,
+                270
+            ],
+            "confidence": 56.1962366104126,
+            "class_id": 1,
+            "model": "model1"
+        }
+    ],
+    "IMG0003477.jpg": [],
+    "IMG0003313.jpg": [],
+    "IMG0003703.jpg": [
+        {
+            "coords": [
+                227,
+                211,
+                258,
+                264
+            ],
+            "confidence": 31.917735934257507,
+            "class_id": 1,
+            "model": "model1"
+        }
+    ],
+    "IMG0003704.jpg": [],
+    "IMG0003712.jpg": [
+        {
+            "coords": [
+                228,
+                240,
+                245,
+                267
+            ],
+            "confidence": 33.05307626724243,
+            "class_id": 1,
+            "model": "model1"
+        }
+    ],
     "IMG0003339.jpg": [
         {
             "coords": [
@@ -11,5 +54,115 @@
             "class_id": 1,
             "model": "model1"
         }
-    ]
+    ],
+    "IMG0003298.jpg": [],
+    "IMG0003301.jpg": [],
+    "IMG0003311.jpg": [],
+    "IMG0003341.jpg": [
+        {
+            "coords": [
+                64,
+                329,
+                147,
+                415
+            ],
+            "confidence": 70.33203840255737,
+            "class_id": 1,
+            "model": "model1"
+        },
+        {
+            "coords": [
+                386,
+                466,
+                475,
+                542
+            ],
+            "confidence": 31.43218159675598,
+            "class_id": 1,
+            "model": "model1"
+        }
+    ],
+    "IMG0003587.jpg": [
+        {
+            "coords": [
+                235,
+                183,
+                281,
+                217
+            ],
+            "confidence": 69.58733797073364,
+            "class_id": 1,
+            "model": "model1"
+        }
+    ],
+    "image1_23_png.rf.da8bbef32848f32a8d5434e328b10428.jpg": [],
+    "image1_302_png.rf.dc3856686e28e1ff95efc721c7cda455.jpg": [],
+    "image1_594_png.rf.08dd02caad7756ae235e1ff58a0205b6.jpg": [],
+    "image2_176_png.rf.87231f93e98596a5a1b52ef2fd5a7871.jpg": [
+        {
+            "coords": [
+                240,
+                109,
+                324,
+                194
+            ],
+            "confidence": 73.1564462184906,
+            "class_id": 4,
+            "model": "model2"
+        }
+    ],
+    "image1_33_png.rf.c1c24340e753b63b6f4e5079b8ef474d.jpg": [
+        {
+            "coords": [
+                119,
+                315,
+                170,
+                402
+            ],
+            "confidence": 28.87590527534485,
+            "class_id": 1,
+            "model": "model1"
+        },
+        {
+            "coords": [
+                121,
+                229,
+                218,
+                319
+            ],
+            "confidence": 59.585899114608765,
+            "class_id": 1,
+            "model": "model2"
+        }
+    ],
+    "image1_454_png.rf.3dd6c4b175031818178433bd945d2af9.jpg": [],
+    "image1_189_png.rf.9fe16c915039954baf6675c96b2bacc6.jpg": [],
+    "image1_497_png.rf.d6769296bd5c7ac8218ae363a5dc3968.jpg": [],
+    "image2_641_png.rf.ca0bfddb8b5ac5e97fa841e32c94ad9a.jpg": [],
+    "image2_1758_png.rf.be01737bb3e65525d2fcac4a9814624f.jpg": [],
+    "image1_536_png.rf.20bf7f571e4badd6d76c3a8894575eb7.jpg": [
+        {
+            "coords": [
+                144,
+                219,
+                227,
+                333
+            ],
+            "confidence": 83.58353972434998,
+            "class_id": 4,
+            "model": "model2"
+        },
+        {
+            "coords": [
+                129,
+                351,
+                172,
+                398
+            ],
+            "confidence": 65.81343412399292,
+            "class_id": 0,
+            "model": "model2"
+        }
+    ],
+    "image1_279_png.rf.b40ab0fc72a8fff98daa57979d24b206.jpg": []
 }
