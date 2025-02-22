@@ -6,7 +6,7 @@ import os
 import shutil
 import json
 import torch
-
+import datetime
 # Folder for saving images and metadata
 SAVE_FOLDER = "saved_images"
 os.makedirs(SAVE_FOLDER, exist_ok=True)
@@ -57,17 +57,19 @@ class Model:
         return filtered_bboxes
 
     @staticmethod
-    def predict(image, image_name):
+    def predict(image, image_name,new):
         metadata = Model.load_metadata()
-        if metadata and image_name in metadata  :
+        is_prev_data = False
+        if metadata and image_name in metadata and not new :
             bbox_data = metadata[image_name]  # Use existing data
+            is_prev_data = True
         else:
             model1 = YOLO("best.pt")  # Detection model (fracture or not)
             model2 = YOLO("best_2.pt")  # Classification model (fracture type)
 
             results1 = model1(image)
             results2 = model2(image)
-
+            date_time = datetime.datetime.now()
             bbox_data = []
 
             # Process results from model1 (Fracture Detection)
@@ -82,7 +84,8 @@ class Model:
                         "coords": [x1, y1, x2, y2],
                         "confidence": confidence,
                         "class_id": class_id1,
-                        "model": "model1"
+                        "model": "model1",
+                        "date and time":str(date_time)
                     })
 
             # Process results from model2 (Fracture Classification)
@@ -98,7 +101,8 @@ class Model:
                         "coords": [x1, y1, x2, y2],
                         "confidence": confidence,
                         "class_id": class_id2,
-                        "model": "model2"
+                        "model": "model2",
+                        "date and time":str(date_time)
                     })
 
             bbox_data = Model.filter_subset_boxes(bbox_data)
@@ -109,12 +113,13 @@ class Model:
                            4: 'humerus', 5: 'shoulder fracture', 6: 'wrist positive'}
 
         # Draw bounding boxes and text on image
+        date_time = ''
         for bbox in bbox_data:
             x1, y1, x2, y2 = bbox["coords"]
             confidence = bbox["confidence"]
             model = bbox["model"]
             class_id = bbox["class_id"]
-
+            date_time = bbox['date and time']
             # Set color and label
             color = (0, 0, 255) if model == "model1" else (255, 0, 0)
             label = "Fracture" if model == "model1" else fracture_labels.get(class_id, "Unknown")
@@ -131,7 +136,7 @@ class Model:
             cv2.rectangle(image, (x1, y1), (x2, y2), color, 2)
             cv2.putText(image, f"{label}: {confidence:.2f}%", (text_x, text_y), cv2.FONT_HERSHEY_SIMPLEX, font_scale, color, thickness)
 
-        return image
+        return image,{"is_prev_data":is_prev_data,"date and time":date_time}
 
 
 def load_and_store_image():
