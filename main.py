@@ -126,7 +126,7 @@ class Model:
 
             # Adjust font size dynamically based on image size
             font_scale = max(0.5, min(image.shape[1] / 800, 1))
-            thickness = max(1, int(font_scale * 2))
+            thickness = max(2, int(font_scale * 2))
 
             # Move text inside the bounding box if it's too close to the edge
             text_x = x1
