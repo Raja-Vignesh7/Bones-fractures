@@ -64,8 +64,8 @@ class Model:
             bbox_data = metadata[image_name]  # Use existing data
             is_prev_data = True
         else:
-            model1 = YOLO("best.pt")  # Detection model (fracture or not)
-            model2 = YOLO("best_2.pt")  # Classification model (fracture type)
+            model1 = YOLO("best_new.pt")  # Detection model (fracture or not)
+            model2 = YOLO("best (2).pt")  # Classification model (fracture type)
 
             results1 = model1(image)
             results2 = model2(image)
